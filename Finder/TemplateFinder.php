@@ -21,6 +21,7 @@ class TemplateFinder
 {
     public const TEMPLATES_DIR = __DIR__ . '/../../../../templates/';
     public const CONFIG_TEMPLATES_DIRS = 'template_dirs';
+
     /**
      * @var array
      */
@@ -42,7 +43,7 @@ class TemplateFinder
      */
     public function findTemplate(string $name): ?string
     {
-        $templateDirs = $this->getTemplateDirs();
+        $templateDirs = $this->getTemplateDirs(self::TEMPLATES_DIR);
 
         for ($i = 0; $i < count($templateDirs); $i++) {
             $template = $this->findTemplateInDir($name, $templateDirs[$i]);
@@ -58,12 +59,13 @@ class TemplateFinder
     }
 
     /**
+     * @param string $rootDir
      * @return array
      */
-    public function getTemplateDirs(): array
+    public function getTemplateDirs(string $rootDir): array
     {
-        $func = function ($dir) {
-            return self::TEMPLATES_DIR . $dir;
+        $func = function ($dir) use ($rootDir){
+            return $rootDir . $dir;
         };
 
         return array_map($func, $this->configuredTemplateDirs);
