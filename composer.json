@@ -1,13 +1,16 @@
 {
   "name": "starychfojtu/viewcomponent",
-  "type": "bundle",
-  "license": "MIT License",
+  "type": "symfony-bundle",
+  "keywords": [ "viewcomponents", "components", "component", "symfony", "twig"],
+  "license": "MIT",
+  "description": "View Components Bundle for Symfony 3.3",
   "autoload": {
     "psr-4": {
       "ViewComponent\\": "src/"
     }
   },
   "require": {
+    "php": "^7.1",
     "symfony/config": "^3.3",
     "symfony/dependency-injection": "^3.3",
     "symfony/finder": "^3.3",
