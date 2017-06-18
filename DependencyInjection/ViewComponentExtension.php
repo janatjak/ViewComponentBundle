@@ -17,6 +17,8 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use ViewComponent\Finder\TemplateFinder;
+use ViewComponent\Finder\ViewComponentFinder;
 
 class ViewComponentExtension extends Extension
 {
@@ -25,7 +27,14 @@ class ViewComponentExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('view_component.config', $config);
+        $container->setParameter(
+            'view_component.config.view_component_dirs',
+                $config[ViewComponentFinder::CONFIG_COMPONENTS_DIRS]
+        );
+        $container->setParameter(
+            'view_component.config.template_dirs',
+                $config[TemplateFinder::CONFIG_TEMPLATES_DIRS]
+        );
 
         $loader = new XmlFileLoader(
             $container,

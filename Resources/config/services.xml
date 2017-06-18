@@ -2,12 +2,24 @@
 <container xmlns="http://symfony.com/schema/dic/services"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
     <services>
+
+        <service id="ViewComponent\Finder\TemplateFinder" class="ViewComponent\Finder\TemplateFinder">
+            <argument>%view_component.config.template_dirs%</argument>
+        </service>
+
+        <service id="ViewComponent\Finder\ViewComponentFinder" class="ViewComponent\Finder\ViewComponentFinder">
+            <argument>%view_component.config.view_component_dirs%</argument>
+            <argument type="service" id="service_container" />
+        </service>
+
         <service id="ViewComponent\Twig\ViewComponentExtension" class="ViewComponent\Twig\ViewComponentExtension">
             <tag name="twig.extension" />
-            <argument type="service" id="service_container" />
             <argument type="service" id="twig" />
-            <argument>%view_component.config%</argument>
+            <argument type="service" id="ViewComponent\Finder\TemplateFinder" />
+            <argument type="service" id="ViewComponent\Finder\ViewComponentFinder" />
         </service>
+
     </services>
 </container>
