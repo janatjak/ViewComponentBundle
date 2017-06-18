@@ -6,7 +6,7 @@
   "description": "View Components Bundle for Symfony 3.3",
   "autoload": {
     "psr-4": {
-      "ViewComponent\\": "/"
+      "ViewComponent\\": ""
     }
   },
   "require": {
