@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ViewComponentBundle\Exception;
+namespace ViewComponent\Exception;
 
 use Exception;
 

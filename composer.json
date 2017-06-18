@@ -1,9 +1,16 @@
 {
-    "require": {
-        "symfony/config": "^3.3",
-        "symfony/dependency-injection": "^3.3",
-        "symfony/finder": "^3.3",
-        "twig/twig": "^2.4",
-        "symfony/http-kernel": "^3.3"
+  "type": "bundle",
+  "license": "MIT License",
+  "autoload": {
+    "psr-4": {
+      "ViewComponent\\": "src/"
     }
+  },
+  "require": {
+    "symfony/config": "^3.3",
+    "symfony/dependency-injection": "^3.3",
+    "symfony/finder": "^3.3",
+    "twig/twig": "^2.4",
+    "symfony/http-kernel": "^3.3"
+  }
 }

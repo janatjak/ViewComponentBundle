@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace ViewComponentBundle\Twig;
+namespace ViewComponent\Twig;
 
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Finder\Finder;
 use Twig_Environment;
-use ViewComponentBundle\Exception\ComponentNotFoundException;
+use ViewComponent\Exception\ComponentNotFoundException;
 use Twig_Extension;
 use Twig_SimpleFunction;
-use ViewComponentBundle\Exception\TemplateNotFoundException;
-use ViewComponentBundle\ViewComponentInterface;
+use ViewComponent\Exception\TemplateNotFoundException;
+use ViewComponent\ViewComponentInterface;
 
 class ViewComponentExtension extends Twig_Extension
 {
