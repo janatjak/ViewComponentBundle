@@ -7,6 +7,12 @@ Implementation of View Components for Symfony 3.3
 $ composer require starychfojtu/viewcomponent
 ```
 
+Symfony flex might register incorrect namespace in bundles.php. If it did,
+go ahead and register it yourself with 
+```php 
+'ViewComponent\ViewComponentBundle' => ['all' => true]
+```
+
 # Configuration
 
 ```yaml
