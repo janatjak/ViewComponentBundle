@@ -23,11 +23,11 @@ objects that are passed to the view.
 YOU HAVE TO NAME YOUR COMPONENT IN THIS WAY : YourSpecialNameViewComponent
 
 ```
-# src/AppBundle/SpecialComponent/MenuViewComponent
+# src/AppBundle/Component/MenuViewComponent
 
 <?php
 
-namespace AppBundle\SpecialComponent;
+namespace AppBundle\Component;
 
 use ViewComponent\ViewComponentInterface;
 
@@ -46,7 +46,7 @@ class MenuViewComponent implements ViewComponentInterface
 Then add your template to one of configured directories.
 
 ```
-# templates/specialComponent/Menu.html.twig
+# templates/components/Menu.html.twig
 
 {% for link in links %}
     {{ link }}
@@ -65,7 +65,7 @@ If you want to specify another template name in view component, just add
 a key with template like this:
 
 ```
-# src/AppBundle/SpecialComponent/MenuViewComponent
+# src/AppBundle/Component/MenuViewComponent
 
 <?php
 
