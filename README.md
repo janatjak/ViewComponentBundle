@@ -2,11 +2,11 @@
 View Components Bundle for Symfony 3.3
 
 # Installation
-composer require starychfojtu/viewcomponents
+composer require starychfojtu/viewcomponent
 
 # Configuration
 
-```
+```yaml
 view_component:
         component_dirs: ['AppBundle/Component', 'AppBundle/SpecialComponent'] #results in '/src/AppBundle/Component', '/src/AppBundle/Component/specialComponent'
         # Specify directories where the bundle should search for components from /src
@@ -22,7 +22,7 @@ objects that are passed to the view.
 
 YOU HAVE TO NAME YOUR COMPONENT IN THIS WAY : YourSpecialNameViewComponent
 
-```
+```php
 # src/AppBundle/Component/MenuViewComponent
 
 <?php
@@ -45,7 +45,7 @@ class MenuViewComponent implements ViewComponentInterface
 
 Then add your template to one of configured directories.
 
-```
+```twig
 # templates/components/Menu.html.twig
 
 {% for link in links %}
@@ -55,7 +55,7 @@ Then add your template to one of configured directories.
 
 And finally render your component in the view:
 
-```
+```twig
 {{ component('Menu') }}
 ```
 
@@ -64,7 +64,7 @@ And finally render your component in the view:
 If you want to specify another template name in view component, just add
 a key with template like this:
 
-```
+```php
 # src/AppBundle/Component/MenuViewComponent
 
 <?php
