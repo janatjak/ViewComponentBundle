@@ -85,3 +85,9 @@ class MenuViewComponent implements ViewComponentInterface
 }
 
 ```
+
+## Dependency injection
+
+To pass any dependencies to the component, just register them as services.
+
+TODO: register them automatically in bundle
