@@ -4,6 +4,12 @@
   "keywords": [ "viewcomponents", "components", "component", "symfony", "twig"],
   "license": "MIT",
   "description": "Implementation of View Components for Symfony 3.3",
+  "authors": [
+    {
+      "name": "Josef Starýchfojtů",
+      "email": "josef.starychfojtu@gmail.com"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "ViewComponent\\": ""
