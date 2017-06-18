@@ -27,8 +27,8 @@ class ViewComponentExtension extends Twig_Extension
     //TODO: AutoRegister ViewComponents as services
     //TODO: is named ViewComponent or implement interface ViewComponent
 
-    public const SRC_DIR = __DIR__.'/../../../src/';
-    public const TEMPLATES_DIR = __DIR__.'/../../../templates/';
+    public const SRC_DIR = __DIR__.'/../../../../src/';
+    public const TEMPLATES_DIR = __DIR__.'/../../../../templates/';
 
     public const CONFIG_TEMPLATES_DIRS = 'template_dirs';
     public const CONFIG_COMPONENTS_DIRS = 'component_dirs';
