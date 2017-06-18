@@ -3,7 +3,7 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="ViewComponentBundle\Twig\ViewComponentExtension" class="ViewComponentBundle\Twig\ViewComponentExtension">
+        <service id="ViewComponent\Twig\ViewComponentExtension" class="ViewComponent\Twig\ViewComponentExtension">
             <tag name="twig.extension" />
             <argument type="service" id="service_container" />
             <argument type="service" id="twig" />
