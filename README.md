@@ -1,8 +1,11 @@
 # ViewComponentBundle
-View Components Bundle for Symfony 3.3
+Implementation of View Components for Symfony 3.3
 
 # Installation
-composer require starychfojtu/viewcomponent
+
+```
+$ composer require starychfojtu/viewcomponent
+```
 
 # Configuration
 
@@ -17,10 +20,11 @@ view_component:
 # Usage
 
 First specify your view component by creating a class in configured directories
-and implement ViewComponentInterface. The render method returns associative array of
+and implement ```ViewComponentInterface```. The render method returns associative array of
 objects that are passed to the view.
 
 YOU HAVE TO NAME YOUR COMPONENT IN THIS WAY : YourSpecialNameViewComponent
+It is a classic CamelCase naming e.g. MenuViewComponent or CartSummaryViewComponent.
 
 ```php
 # src/AppBundle/Component/MenuViewComponent

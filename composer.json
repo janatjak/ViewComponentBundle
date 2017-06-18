@@ -3,7 +3,7 @@
   "type": "symfony-bundle",
   "keywords": [ "viewcomponents", "components", "component", "symfony", "twig"],
   "license": "MIT",
-  "description": "View Components Bundle for Symfony 3.3",
+  "description": "Implementation of View Components for Symfony 3.3",
   "autoload": {
     "psr-4": {
       "ViewComponent\\": ""
