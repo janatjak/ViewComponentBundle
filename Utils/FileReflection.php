@@ -6,6 +6,10 @@ namespace ViewComponent\Utils;
 
 class FileReflection
 {
+    /**
+     * @param string $filePathName
+     * @return null|string
+     */
     public static function getClassNamespaceFromFile(string $filePathName): ?string
     {
         $src = file_get_contents($filePathName);

@@ -66,6 +66,9 @@ class ViewComponentFinder
         );
     }
 
+    /**
+     * @return array
+     */
     public function getComponentDirs(): array
     {
         $func = function ($dir) {
@@ -93,11 +96,19 @@ class ViewComponentFinder
         return null;
     }
 
+    /**
+     * @param string $class
+     * @return ViewComponentInterface
+     */
     public function instantiateViewComponent(string $class): ViewComponentInterface
     {
         return $this->container->get($class);
     }
 
+    /**
+     * @param string $name
+     * @return string
+     */
     public static function stripName(string $name): string
     {
         return str_replace('ViewComponent.php', '', $name);

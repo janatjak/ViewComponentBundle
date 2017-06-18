@@ -53,7 +53,10 @@ class ViewComponentExtension extends Twig_Extension
         $this->templateFinder = $templateFinder;
     }
 
-    public function getFunctions()
+    /**
+     * @return array
+     */
+    public function getFunctions(): array
     {
         return [
             new Twig_SimpleFunction(
@@ -63,6 +66,10 @@ class ViewComponentExtension extends Twig_Extension
         ];
     }
 
+    /**
+     * @param string $name
+     * @return string
+     */
     public function renderViewComponent(string $name): string
     {
         $data = $this->viewComponentFinder
