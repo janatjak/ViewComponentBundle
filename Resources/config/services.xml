@@ -17,8 +17,8 @@
         <service id="ViewComponent\Twig\ViewComponentExtension" class="ViewComponent\Twig\ViewComponentExtension">
             <tag name="twig.extension" />
             <argument type="service" id="twig" />
-            <argument type="service" id="ViewComponent\Finder\TemplateFinder" />
             <argument type="service" id="ViewComponent\Finder\ViewComponentFinder" />
+            <argument type="service" id="ViewComponent\Finder\TemplateFinder" />
         </service>
 
     </services>
