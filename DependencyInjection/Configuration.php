@@ -29,7 +29,6 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->arrayNode('component_dirs')
-                    ->isRequired()
                     ->prototype('scalar')
                     ->end()
                 ->end()
