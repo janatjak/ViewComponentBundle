@@ -16,11 +16,11 @@ go ahead and register it yourself with
 # Configuration
 
 ```yaml
-view_component:
-        component_dirs: ['AppBundle/Component', 'AppBundle/SpecialComponent'] #results in '/src/AppBundle/Component', '/src/AppBundle/Component/specialComponent'
-        # Specify directories where the bundle should search for components from /src
-        template_dirs: ['components', 'specialComponents'] #results in '/templates/components', '/templates/specialComponents'
-        # Specify directories where the bundle should search for templates from /templates
+starychfojtu_view_component:
+    component_dirs: ['AppBundle/Component', 'AppBundle/SpecialComponent'] #results in '/src/AppBundle/Component', '/src/AppBundle/Component/specialComponent'
+    # Specify directories where the bundle should search for components from /src
+    template_dirs: ['components', 'specialComponents'] #results in '/templates/components', '/templates/specialComponents'
+    # Specify directories where the bundle should search for templates from /templates
 ```
 
 # Usage

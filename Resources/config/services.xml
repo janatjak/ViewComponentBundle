@@ -5,20 +5,20 @@
 
     <services>
 
-        <service id="ViewComponent\Finder\TemplateFinder" class="ViewComponent\Finder\TemplateFinder">
+        <service id="Starychfojtu\ViewComponentBundle\Finder\TemplateFinder" class="Starychfojtu\ViewComponentBundle\Finder\TemplateFinder">
             <argument>%view_component.config.template_dirs%</argument>
         </service>
 
-        <service id="ViewComponent\Finder\ViewComponentFinder" class="ViewComponent\Finder\ViewComponentFinder">
+        <service id="Starychfojtu\ViewComponentBundle\Finder\ViewComponentFinder" class="Starychfojtu\ViewComponentBundle\Finder\ViewComponentFinder">
             <argument>%view_component.config.view_component_dirs%</argument>
             <argument type="service" id="service_container" />
         </service>
 
-        <service id="ViewComponent\Twig\ViewComponentExtension" class="ViewComponent\Twig\ViewComponentExtension">
+        <service id="Starychfojtu\ViewComponentBundle\Twig\ViewComponentExtension" class="Starychfojtu\ViewComponentBundle\Twig\ViewComponentExtension">
             <tag name="twig.extension" />
             <argument type="service" id="twig" />
-            <argument type="service" id="ViewComponent\Finder\ViewComponentFinder" />
-            <argument type="service" id="ViewComponent\Finder\TemplateFinder" />
+            <argument type="service" id="Starychfojtu\ViewComponentBundle\Finder\ViewComponentFinder" />
+            <argument type="service" id="Starychfojtu\ViewComponentBundle\Finder\TemplateFinder" />
         </service>
 
     </services>

@@ -24,7 +24,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('view_component');
+        $rootNode = $treeBuilder->root('starychfojtu_view_component');
 
         $rootNode
             ->children()

@@ -19,6 +19,7 @@ use Twig_Extension;
 use Twig_SimpleFunction;
 use Starychfojtu\ViewComponentBundle\Finder\TemplateFinder;
 
+
 class ViewComponentExtension extends Twig_Extension
 {
     /**
