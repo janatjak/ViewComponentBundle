@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Starychfojtu\ViewComponentBundle\Finder;
 
+use Nayjest\StrCaseConverter\Str;
 use Symfony\Component\Finder\Finder;
 use Starychfojtu\ViewComponentBundle\Exception\ComponentNotFoundException;
 use Starychfojtu\ViewComponentBundle\Exception\TemplateNotFoundException;
@@ -82,7 +83,7 @@ class TemplateFinder
         $finder->files()->in($dir);
 
         foreach ($finder as $file) {
-            $templateName = $file->getRelativePathname();
+            $templateName = Str::toCamelCase($file->getRelativePathname());
             if ($templateName == $name . '.html.twig') {
                 return $file->getRelativePathname();
             }
