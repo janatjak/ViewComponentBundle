@@ -12,7 +12,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Starychfoju\\ViewComponentBundle\\": ""
+      "Starychfojtu\\ViewComponentBundle\\": ""
     }
   },
   "require": {
