@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Starychfojtu\ViewComponent\Finder;
+namespace Starychfojtu\ViewComponentBundle\Finder;
 
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Finder\Finder;
