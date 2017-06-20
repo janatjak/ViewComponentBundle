@@ -1,0 +1,3 @@
+view_component:
+    component_dirs: ['AppBundle/Component'] #change this
+    template_dirs: ['components'] #change this
