@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace ViewComponent\Exception;
+namespace Starychfojtu\ViewComponentBundle\Exception;
 
 use Exception;
 

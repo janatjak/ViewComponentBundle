@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace ViewComponent\DependencyInjection;
+namespace Starychfojtu\ViewComponentBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

@@ -11,14 +11,14 @@
 
 declare(strict_types=1);
 
-namespace ViewComponent\DependencyInjection;
+namespace Starychfojtu\ViewComponentBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use ViewComponent\Finder\TemplateFinder;
-use ViewComponent\Finder\ViewComponentFinder;
+use Starychfojtu\ViewComponentBundle\Finder\TemplateFinder;
+use Starychfojtu\ViewComponentBundle\Finder\ViewComponentFinder;
 
 class ViewComponentExtension extends Extension
 {

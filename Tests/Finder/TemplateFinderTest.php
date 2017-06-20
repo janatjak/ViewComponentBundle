@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ViewComponent\Tests\Finder;
+namespace Starychfojtu\ViewComponentBundle\Tests\Finder;
 
 use PHPUnit\Framework\TestCase;
-use ViewComponent\Exception\TemplateNotFoundException;
-use ViewComponent\Finder\TemplateFinder;
+use Starychfojtu\ViewComponentBundle\Exception\TemplateNotFoundException;
+use Starychfojtu\ViewComponentBundle\Finder\TemplateFinder;
 
 class TemplateFinderTest extends TestCase
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ViewComponent\Utils;
+namespace Starychfojtu\ViewComponentBundle\Utils;
 
 class FileReflection
 {

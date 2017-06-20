@@ -11,11 +11,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace ViewComponent\Finder;
+namespace Starychfojtu\ViewComponentBundle\Finder;
 
 use Symfony\Component\Finder\Finder;
-use ViewComponent\Exception\ComponentNotFoundException;
-use ViewComponent\Exception\TemplateNotFoundException;
+use Starychfojtu\ViewComponentBundle\Exception\ComponentNotFoundException;
+use Starychfojtu\ViewComponentBundle\Exception\TemplateNotFoundException;
 
 class TemplateFinder
 {

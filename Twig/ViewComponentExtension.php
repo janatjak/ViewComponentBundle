@@ -11,13 +11,13 @@
 
 declare(strict_types=1);
 
-namespace ViewComponent\Twig;
+namespace Starychfojtu\ViewComponentBundle\Twig;
 
 use Twig_Environment;
 use Twig_Extension;
 use Twig_SimpleFunction;
-use ViewComponent\Finder\TemplateFinder;
-use ViewComponent\Finder\ViewComponentFinder;
+use Starychfojtu\ViewComponentBundle\Finder\TemplateFinder;
+use Starychfojtu\ViewComponentBundle\Finder\ViewComponentFinder;
 
 class ViewComponentExtension extends Twig_Extension
 {

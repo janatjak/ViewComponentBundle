@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ViewComponent\Tests\Finder;
+namespace Starychfojtu\ViewComponentBundle\Tests\Finder;
 
 use PHPUnit_Framework_TestCase;
 

@@ -11,13 +11,13 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace ViewComponent\Finder;
+namespace Starychfojtu\ViewComponent\Finder;
 
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Finder\Finder;
-use ViewComponent\Exception\ComponentNotFoundException;
-use ViewComponent\Utils\FileReflection;
-use ViewComponent\ViewComponentInterface;
+use Starychfojtu\ViewComponentBundle\Exception\ComponentNotFoundException;
+use Starychfojtu\ViewComponentBundle\Utils\FileReflection;
+use Starychfojtu\ViewComponentBundle\ViewComponentInterface;
 
 class ViewComponentFinder
 {

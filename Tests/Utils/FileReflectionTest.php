@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ViewComponent\Tests\Utils;
+namespace Starychfojtu\ViewComponentBundle\Tests\Utils;
 
 use PHPUnit\Framework\TestCase;
-use ViewComponent\Utils\FileReflection;
+use Starychfojtu\ViewComponentBundle\Utils\FileReflection;
 
 class FileReflectionTest extends TestCase
 {
