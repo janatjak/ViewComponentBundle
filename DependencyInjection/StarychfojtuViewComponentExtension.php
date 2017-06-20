@@ -13,14 +13,14 @@ declare(strict_types=1);
 
 namespace Starychfojtu\ViewComponentBundle\DependencyInjection;
 
+use Starychfojtu\ViewComponent\Finder\ViewComponentFinder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Starychfojtu\ViewComponentBundle\Finder\TemplateFinder;
-use Starychfojtu\ViewComponentBundle\Finder\ViewComponentFinder;
 
-class ViewComponentExtension extends Extension
+class StarychfojtuViewComponentExtension extends Extension
 {
     /**
      * @param array $configs

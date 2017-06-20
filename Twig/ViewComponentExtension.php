@@ -37,7 +37,7 @@ class ViewComponentExtension extends Twig_Extension
     private $templateFinder;
 
     /**
-     * ViewComponentExtension constructor.
+     * StarychfojtuViewComponentExtension constructor.
      * @param Twig_Environment $twig
      * @param ViewComponentFinder $viewComponentFinder
      * @param TemplateFinder $templateFinder

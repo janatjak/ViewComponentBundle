@@ -6,7 +6,7 @@ namespace Starychfojtu\ViewComponentBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ViewComponentBundle extends Bundle
+class StarychfojtuViewComponentBundle extends Bundle
 {
 
 }

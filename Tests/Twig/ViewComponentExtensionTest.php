@@ -7,6 +7,6 @@ class ViewComponentExtensionTest
     public function test_can_render_component()
     {
         //TODO: mock dependencies
-//        $extension = new ViewComponentExtension();
+//        $extension = new StarychfojtuViewComponentExtension();
     }
 }
