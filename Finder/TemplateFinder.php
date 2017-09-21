@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Starychfojtu\ViewComponentBundle\Finder;
 
 use Nayjest\StrCaseConverter\Str;
+use Symfony\Component\Cache\Simple\FilesystemCache;
 use Symfony\Component\Finder\Finder;
 use Starychfojtu\ViewComponentBundle\Exception\ComponentNotFoundException;
 use Starychfojtu\ViewComponentBundle\Exception\TemplateNotFoundException;
@@ -22,6 +23,7 @@ class TemplateFinder
 {
     public const TEMPLATES_DIR = __DIR__ . '/../../../../templates/';
     public const CONFIG_TEMPLATES_DIRS = 'template_dirs';
+    private const CACHE_PREFIX = 'Component_template_';
 
     /**
      * @var array
@@ -29,12 +31,17 @@ class TemplateFinder
     private $configuredTemplateDirs;
 
     /**
-     * TemplateFinder constructor.
+     * @var FilesystemCache
+     */
+    private $cache;
+
+    /**
      * @param array $configuredTemplateDirs
      */
     public function __construct(array $configuredTemplateDirs)
     {
         $this->configuredTemplateDirs = $configuredTemplateDirs;
+        $this->cache = new FilesystemCache();
     }
 
     /**
@@ -44,12 +51,20 @@ class TemplateFinder
      */
     public function findTemplate(string $name): ?string
     {
+        $cacheName = self::CACHE_PREFIX.$name;
+
+        if ($this->cache->has($cacheName)) {
+            return $this->cache->get($cacheName);
+        }
+
         $templateDirs = $this->getTemplateDirs(self::TEMPLATES_DIR);
 
         for ($i = 0; $i < count($templateDirs); $i++) {
             $template = $this->findTemplateInDir($name, $templateDirs[$i]);
 
             if ($template != null) {
+                $this->cache->set($cacheName, $template);
+
                 return $this->configuredTemplateDirs[$i] . '/' . $template;
             }
         }
