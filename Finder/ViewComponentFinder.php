@@ -25,6 +25,8 @@ class ViewComponentFinder
     public const SRC_DIR = __DIR__ . '/../../../../src/';
     public const CONFIG_COMPONENTS_DIRS = 'component_dirs';
     private const CACHE_PREFIX = 'Component_';
+    private const CACHE_DIR = __DIR__.'/../../../../var/cache/';
+    private const CACHE_NAME = '/view_component';
 
     /**
      * @var array
@@ -49,7 +51,7 @@ class ViewComponentFinder
     {
         $this->configuredComponentDirs = $configuredComponentDirs;
         $this->container = $container;
-        $this->cache = new FilesystemCache();
+        $this->cache = new FilesystemCache('', 0, self::CACHE_DIR.getenv('APP_ENV').self::CACHE_NAME);
     }
 
     /**

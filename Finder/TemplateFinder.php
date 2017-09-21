@@ -24,6 +24,8 @@ class TemplateFinder
     public const TEMPLATES_DIR = __DIR__ . '/../../../../templates/';
     public const CONFIG_TEMPLATES_DIRS = 'template_dirs';
     private const CACHE_PREFIX = 'Component_template_';
+    private const CACHE_DIR = __DIR__.'/../../../../var/cache/';
+    private const CACHE_NAME = '/view_component';
 
     /**
      * @var array
@@ -41,7 +43,7 @@ class TemplateFinder
     public function __construct(array $configuredTemplateDirs)
     {
         $this->configuredTemplateDirs = $configuredTemplateDirs;
-        $this->cache = new FilesystemCache();
+        $this->cache = new FilesystemCache('', 0, self::CACHE_DIR.getenv('APP_ENV').self::CACHE_NAME);
     }
 
     /**
@@ -63,9 +65,10 @@ class TemplateFinder
             $template = $this->findTemplateInDir($name, $templateDirs[$i]);
 
             if ($template != null) {
-                $this->cache->set($cacheName, $template);
+                $templateDir = $this->configuredTemplateDirs[$i].'/'.$template;
+                $this->cache->set($cacheName, $templateDir);
 
-                return $this->configuredTemplateDirs[$i] . '/' . $template;
+                return $templateDir;
             }
         }
 
