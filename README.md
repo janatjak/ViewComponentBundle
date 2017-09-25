@@ -39,7 +39,7 @@ It is a classic CamelCase naming e.g. MenuViewComponent or CartSummaryViewCompon
 
 namespace AppBundle\Component;
 
-use ViewComponent\ViewComponentInterface;
+use Starychfojtu\ViewComponentBundle\ViewComponentInterface;
 
 class MenuViewComponent implements ViewComponentInterface
 {
@@ -66,8 +66,10 @@ Then add your template to one of configured directories.
 And finally render your component in the view:
 
 ```twig
-{{ component('Menu') }}
+{{ component('Menu', 60 * 60) }}
 ```
+
+The second parameter is cache time of the whole component with default set on 0;
 
 ## Custom template name
 
@@ -81,7 +83,7 @@ a key with template like this:
 
 namespace AppBundle\SpecialComponent;
 
-use ViewComponent\ViewComponentInterface;
+use Starychfojtu\ViewComponentBundle\ViewComponentInterface;
 
 class MenuViewComponent implements ViewComponentInterface
 {
