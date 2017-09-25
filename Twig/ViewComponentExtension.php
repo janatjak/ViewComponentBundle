@@ -14,14 +14,18 @@ declare(strict_types=1);
 namespace Starychfojtu\ViewComponentBundle\Twig;
 
 use Starychfojtu\ViewComponentBundle\Finder\ViewComponentFinder;
+use Symfony\Component\Cache\Simple\FilesystemCache;
 use Twig_Environment;
 use Twig_Extension;
 use Twig_SimpleFunction;
 use Starychfojtu\ViewComponentBundle\Finder\TemplateFinder;
 
-
 class ViewComponentExtension extends Twig_Extension
 {
+    private const CACHE_PREFIX = 'Component_Response_';
+    private const CACHE_DIR = __DIR__.'/../../../../var/cache/';
+    private const CACHE_NAME = '/view_component';
+
     /**
      * @var Twig_Environment
      */
@@ -38,11 +42,14 @@ class ViewComponentExtension extends Twig_Extension
     private $templateFinder;
 
     /**
-     * StarychfojtuViewComponentExtension constructor.
+     * @var FilesystemCache
+     */
+    private $cache;
+
+    /**
      * @param Twig_Environment $twig
      * @param ViewComponentFinder $viewComponentFinder
      * @param TemplateFinder $templateFinder
-     * @internal param array $config
      */
     public function __construct(
         Twig_Environment $twig,
@@ -52,6 +59,7 @@ class ViewComponentExtension extends Twig_Extension
         $this->twig = $twig;
         $this->viewComponentFinder = $viewComponentFinder;
         $this->templateFinder = $templateFinder;
+        $this->cache = new FilesystemCache('', 0, self::CACHE_DIR.getenv('APP_ENV').self::CACHE_NAME);
     }
 
     /**
@@ -69,10 +77,20 @@ class ViewComponentExtension extends Twig_Extension
 
     /**
      * @param string $name
+     * @param int $cacheTime
      * @return string
      */
-    public function renderViewComponent(string $name): string
+    public function renderViewComponent(string $name, int $cacheTime = 0): string
     {
+        $cacheName = self::CACHE_PREFIX.$name;
+
+        if ($this->cache->has($cacheName)) {
+            /** @var string $cacheData */
+            $cacheData = $this->cache->get($cacheName);
+
+            return $cacheData;
+        }
+
         $data = $this->viewComponentFinder
             ->findViewComponent($name)
             ->render();
@@ -83,6 +101,12 @@ class ViewComponentExtension extends Twig_Extension
             return $this->twig->render($template, $data);
         }
 
-        return $this->twig->render($this->templateFinder->findTemplate($name), $data);
+        $result = $this->twig->render($this->templateFinder->findTemplate($name), $data);
+
+        if ($cacheTime > 0) {
+            $this->cache->set($cacheName, $result, $cacheTime);
+        }
+
+        return $result;
     }
 }
